@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>人才招聘网</title> 
+	<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+	<link href="__PUBLIC__/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<header class="navbar navbar-default navbar-static-top" role="navigation">
+	    <div class="container">
+	        <div class="navbar-header">
+	            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#job-navbar-collapse">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="__APP__" title="WooYunJob">人才招聘网</a>
+	        </div>
+
+	        <div class="collapse navbar-collapse" id="job-navbar-collapse">
+	            <ul class="nav navbar-nav navbar-right">
+	                <li><a href="__APP__/User/index">{$_SESSION['realname']}</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	</header>
+
+
+
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-9 col-sm-8 clearfix">
+				<nav class="navbar navbar-inverse" role="navigation">
+				             <div class="container">
+				                    <div class="navbar-header">
+				                        <span class="navbar-brand" style="margin-top:6px;">职位列表</span>
+				                    </div>
+					                    <div class="collapse navbar-collapse navbar-form" id="job-nav">
+					                        <div class="input-group search-job">
+					                        	<form action="__APP__/Index/Search" method="post">
+						                                <input type="text" class="form-control" id="search_keyword" value="" name="keyword" placeholder="请输入职位关键词">
+						                                <span class="input-group-btn">
+						                                <button class="btn btn-default" type="submit">
+						                                    <i class="glyphicon glyphicon-search"></i>
+						                                 </button>
+						                                </span>
+					                          </form>
+					                        </div>
+					                    </div>
+				             </div>
+		         		</nav>
+				<foreach name="data" item="vo">
+					<div class="col-md-12 col-sm-11 clearfix">
+						<div class="job-item">
+								<ul class="ul-inline">
+									<span class="badge pull-right">
+										<if condition="($vo.isWanted eq 1)"> 正在招聘中
+										<else /> 已停止招聘
+										</if>
+									</span>
+									<li><img src="__PUBLIC__/img/default.png" class="jobimg"/></li>
+									<li>
+
+										<a class="jobname" href="__APP__/show/item/id/{$vo.id}"><h4>{$vo.jobname}</h4></a>
+
+										<ul class="ul-inline">
+											<li>{$vo.companyname}</li>
+											<li style="margin-left:80px;">月薪：{$vo.salary}</li>
+											<li  style="margin-left:80px;">所在地：{$vo.city}</li>
+										</ul>
+
+									</li>
+								</ul>
+						</div>
+					</div>
+
+				</foreach>
+				<div>
+					&nbsp;&nbsp;
+				</div>
+				<div class="page">
+					{$show}
+				</div>
+				
+	        		  </div>
+		
+					
+
+		<div class="col-md-3 col-sm-4">
+
+		    <div class="panel panel-default">
+		    	<div class="panel-heading myheading" style="background-color: #c8dce8;">
+		    		个人信息
+		    	</div>
+		        <div class="panel-body">
+		            <ul class="list-unstyled user-right-banner">
+		                <li class="active"><a href="__APP__">首页</a></li>
+		                <li><a href="__APP__/User/myapply">我申请的职位<span class="badge"></span></a></li>
+		                <li><a href="__APP__/User/Index" data-toggle="popover" id="my-resume">我的简历</a></li>
+		            </ul>
+		        </div>
+		    </div>
+		</div>
+		
+
+
+
+	</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

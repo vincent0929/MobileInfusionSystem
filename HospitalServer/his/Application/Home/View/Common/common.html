@@ -1,0 +1,45 @@
+		
+
+		<script src="__PUBLIC__/js/jquery.min.js"></script> 
+       
+        <script src="__PUBLIC__/js/unicorn.js"></script>
+		
+		<div id="header">
+			<h1><a href="#">招聘信息管理</a></h1>		
+		</div>
+		
+
+		<div id="user-nav" class="navbar">
+			<span style="color:yellow;">{$_SESSION['username']}</span>
+            <a class="btn btn-danger" href="__APP__/Home/Index/login">注销</a>
+        </div>
+
+
+            
+		<div id="sidebar">
+			
+			<ul>
+				<li class="active"><a href="__APP__/Home/Index/index"><i class="icon icon-home"></i> <span>首页</span></a></li>
+
+				<li><a href="__APP__/Home/User/apply"><i class="icon icon-th-list"></i> <span>预约挂号</span> </a></li>
+
+				<li class="submenu">
+					<a href="#"><i class="icon icon-th-list"></i> <span>药品管理</span> <span class="label">2</span></a>
+					<ul>
+						<li><a href="__APP__/Home/Drug/index">查看药品</a></li>
+						<li><a href="__APP__/Home/Drug/addDrug">添加药品</a></li>
+					</ul>
+				</li>
+				<li class="submenu">
+					<a href="#"><i class="icon icon-th-list"></i> <span>人员信息</span> <span class="label">3</span></a>
+					<ul>
+						<li><a href="__APP__/Home/User/listuser">患者管理</a></li>
+						<li><a href="__APP__/Home/Nurse/add">添加护士</a></li>
+						<li><a href="__APP__/Home/Nurse/listuser">护士管理</a></li>
+					</ul>
+				</li>
+				<li><a href="__APP__/Home/User/progress"><i class="icon icon-th-list"></i> <span>进度统计</span> </a></li>
+				
+			</ul>
+		
+		</div>

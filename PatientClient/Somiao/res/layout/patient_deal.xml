@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dip"
+            android:background="@drawable/patient_top_background" >
+
+            <ImageView
+                android:id="@+id/iv_redten_patient"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:background="@drawable/red_ten" />
+
+            <TextView
+                android:id="@+id/tv_welcome_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="先生,下午好" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_queue_patient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_queue_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您前面的排队人数为:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_sumqueue_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="等待获取排队消息"
+                android:textColor="#ff0000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+		
+        <TextView
+            android:id="@+id/tv_drug_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_check"
+                android:layout_width="230dip"
+                android:layout_height="210dip"
+                android:background="@drawable/cricle"
+                android:text="查询数据"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <com.android.progressbar.RoundProgressBar
+                android:id="@+id/roundProgressBar"
+                android:layout_width="200dip"
+                android:layout_height="200dip"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_progressbar_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dip"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="总进度为:" />
+
+                <ProgressBar
+                    android:id="@+id/progressbar_h"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:progress="30" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_ask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="15dip"
+                android:background="@drawable/btn_round_gray"
+                android:text="启动护士服务" />
+
+            <LinearLayout
+                android:id="@+id/ll_nurse_patient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dip"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <Button
+                    android:id="@+id/btn_asknurse1_patient"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_round_gray"
+                    android:text="换药" />
+
+                <Button
+                    android:id="@+id/btn_asknurse2_patient"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_round_gray"
+                    android:text="特殊" />
+
+                <Button
+                    android:id="@+id/btn_asknurse3_patient"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_round_gray"
+                    android:text="拔针" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_text_nurse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="为您服务的护士编号为:"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_nurse_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ff0000"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/time_shuye"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <SlidingDrawer
+        android:id="@+id/sd_mydrawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:content="@+id/sd_mycontent"
+        android:handle="@+id/sd_myhandler"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@id/sd_myhandler"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="55dip"
+                android:src="@drawable/menu" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/sd_mycontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="病人姓名:" />
+
+            <TextView
+                android:id="@+id/tv_name_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="王宇" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="条码号:" />
+
+            <TextView
+                android:id="@+id/tv_code_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="座位号:" />
+
+            <TextView
+                android:id="@+id/tv_seat_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手机号码:" />
+
+            <TextView
+                android:id="@+id/tv_phone_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1234567876" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="性别:" />
+
+            <TextView
+                android:id="@+id/tv_sex_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="身份证号:" />
+
+            <TextView
+                android:id="@+id/tv_idcard_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="421023199308105736" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="公司名称:" />
+
+            <TextView
+                android:id="@+id/tv_corp_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="沈阳理工" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="病人住址:" />
+
+            <TextView
+                android:id="@+id/tv_address_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="挂号时间:" />
+
+            <TextView
+                android:id="@+id/tv_time_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2015-05-16 10:10:10" />
+        </LinearLayout>
+    </SlidingDrawer>
+
+</RelativeLayout>

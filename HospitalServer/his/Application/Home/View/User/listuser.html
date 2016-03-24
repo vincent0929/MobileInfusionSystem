@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- container-fluid -->
+	<head>
+		<title>网站后台管理</title>
+		<meta charset="UTF-8" />
+     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.main.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.grey.css" class="skin-color" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<style type="text/css">
+
+		.user{
+				text-align: center;
+			}
+
+		.user a:hover{
+				color: #FF0000;
+			}
+			td{
+				text-align: center;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		
+		<include file="Common:common"/>
+	
+		<div id="content">
+			<div id="content-header">
+				<h1>后台管理首页</h1>
+			</div>
+			<ol class="breadcrumb">
+				  <li><a href="__APP__/Home/index">首页</a></li>
+				  <li class="active">患者信息管理</li>
+			</ol>
+
+
+			<!-- 主内容区 -->
+
+			<table class="table table-bordered table-hover definewidth m10">
+			    <thead>
+			    <tr>
+			    	<th>真实姓名</th>
+			        <th>身份证号</th>
+			        <th>性别</th>
+			        <th>手机号码</th>
+			        <th>联系地址</th>
+			        <th>公司信息</th>
+			        <th>条形码</th>
+			        <th>输液座号</th>
+			        <th>操作</th>
+			    </tr>
+			    </thead>
+
+			    <foreach name="userdata" item='vo'>
+			    	<tr class="info">
+			    		<td>{$vo.realname}</td>
+			    		<td>{$vo.idcard}</td>
+		                <td>{$vo.sex}</td>
+		                <td>{$vo.mobile}</td>
+		                <td>{$vo.address}</td>
+		                <td>{$vo.corpname}</td>
+		                <td>{$vo.barcode}</td>
+		                <td>{$vo.seatid}</td>
+		                <td class="user"></a>
+		                	<a href="__APP__/Home/User/delete/id/{$vo.id}"> 删除</a></td>
+			    	</tr>
+			    </foreach></table>
+
+			<!-- <p style="font-size:17px" class="text-center">总共{$pageshow}</p> -->
+
+		</div>
+
+	</body>
+</html>

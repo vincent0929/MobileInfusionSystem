@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- container-fluid -->
+	<head>
+		<title>网站后台管理</title>
+		<meta charset="UTF-8" />
+     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.main.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.grey.css" class="skin-color" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<style type="text/css">
+
+		.user{
+				text-align: center;
+			}
+
+		.user a:hover{
+				color: #FF0000;
+			}
+			td{
+				text-align: center;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		
+		<include file="Common:common"/>
+	
+		<div id="content">
+			<div id="content-header">
+				<h1>后台管理首页</h1>
+			</div>
+			<ol class="breadcrumb">
+				  <li><a href="__APP__/Home/index">首页</a></li>
+				  <li class="active">药品管理</li>
+			</ol>
+
+
+			<!-- 主内容区 -->
+
+			<table class="table table-bordered table-hover definewidth m10">
+			    <thead>
+			    <tr>
+			    	<th>药品编号</th>
+			        <th>药品名称</th>
+			        <th>药品规格</th>
+			        <th>计量单位</th>
+			        <th>药品单价</th>
+			        <th>生产日期</th>
+			        <th>保质期</th>
+			        <th>药品条码</th>
+			        <th>药品管理</th>
+			    </tr>
+			    </thead>
+
+			    <foreach name="data" item='vo'>
+			    	<tr class="info">
+			    		<td>{$vo.id}</td>
+			    		<td>{$vo.name}</td>
+		                <td>{$vo.specifications}</td>
+		                <td>{$vo.dw}</td>
+		                <td>{$vo.price}</td>
+		                <td>{$vo.gen_date|date='Y-m-d H:i:s',###}</td>
+		                <td>{$vo.pz_date}</td>
+		                <td>{$vo.barcode}</td>
+		                <td class="user"><a href="__APP__/Home/Drug/editDrug/id/{$vo.id}">编辑 |</a>
+		                	<a href="__APP__/Home/Drug/deleteDrug/id/{$vo.id}"> 删除</a></td>
+			    	</tr>
+			    </foreach></table>
+
+			<!-- <p style="font-size:17px" class="text-center">总共{$pageshow}</p> -->
+
+		</div>
+
+	</body>
+</html>

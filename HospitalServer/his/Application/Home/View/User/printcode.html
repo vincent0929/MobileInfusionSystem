@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>打印条码</title>
+</head>
+<body>
+	<div class="top">
+		
+	
+		<p class="people">{$realname}</p>
+		<img class="peopleImg" src="__PUBLIC__/html/image.php?filetype=PNG&dpi=300&scale=3&rotation=0&font_family=Arial.ttf&font_size=16&text={$barcode}&thickness=30&checksum=&code=BCGcode39" alt="" />
+	
+	</div>
+	<!-- <button  onClick="clickme()" id="printme">打印挂号条码</button>  -->
+
+
+	
+</body>
+	
+	<script>
+		// function clickme() {
+		// 	var printme=document.getElementById("printme");  
+		// 	printme.style.display='none';
+		// 	window.print();
+		// }
+		window.print();
+	</script>
+	<style>
+		/*.people{
+			text-align: center;
+		}
+		.peopleImg{
+			margin-left: 200px;
+		}*/
+		
+		.top{
+			text-align: center;
+			margin-top: 50px;
+		}
+	</style>
+
+</html>

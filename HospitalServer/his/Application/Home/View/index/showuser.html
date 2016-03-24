@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>人才招聘网</title> 
+	<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+	<link href="__PUBLIC__/css/style.css" rel="stylesheet">
+	<script src="__PUBLIC__/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<header class="navbar navbar-default navbar-static-top" role="navigation">
+	    <div class="container">
+	        <div class="navbar-header">
+	            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#job-navbar-collapse">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="__APP__" title="WooYunJob">人才招聘网</a>
+	        </div>
+
+	        
+	    </div>
+	</header>
+	
+	
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-9 col-sm-8 clearfix">
+				<nav class="navbar navbar-inverse" role="navigation">
+				             <div class="container">
+				                    <div class="navbar-header">
+				                        <span class="navbar-brand" style="margin-top:6px;">个人信息</span>
+				                    </div>
+				             </div>
+		         		</nav>
+
+			
+			<div class="person-intro job-detail">
+				<br>
+				<h4><p class="jobtag" style="margin-left:0px;">职场初印象</p></h4>
+
+				<ul class="ul-unstyle">
+					<li class="job-item-info">姓名：{$userdata[0].realname}</li>
+					<li class="job-item-info">邮箱：{$userdata[0].email}</li>
+					<li class="job-item-info">现居地：{$userdata[0].city}</li>
+					<li class="job-item-info">期望月薪：{$userdata[0].wantmoney}</li>
+				</ul>
+				<br>
+				<h4><p class="jobtag" style="margin-left:0px;">TA的技能表</p></h4>
+				
+				<!-- 循环输出用户标签 -->
+				<ul  class="ul-inline-jobtag">
+					<foreach name="tag" item="tagitem">
+						<li class="btn btn-success">{$tagitem}</li>
+					</foreach>
+					<!-- <li class="btn btn-primary">添加</li> -->
+					
+				</ul>
+	
+				<br>
+				<h4><p class="jobtag" style="margin-left:0px;">简历附件</p></h4>
+			
+				<div class="job-resume">
+					
+						
+						
+					<div class="btn-group">
+						
+						  <a type="button" class="btn btn-success" href="__PUBLIC__/Uploads/{$resumedata}">下载简历</a>
+						</div>
+					
+				</div>
+
+				<br><br>
+
+			</div>
+
+
+
+
+
+		         	</div>
+
+
+
+
+
+		         	
+
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

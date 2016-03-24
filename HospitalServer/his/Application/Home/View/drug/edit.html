@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- container-fluid -->
+	<head>
+		<title>网站后台管理</title>
+		<meta charset="UTF-8" />
+     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-responsive.min.css" />	
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.main.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.grey.css" class="skin-color" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+		 <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+
+
+    </style>
+
+	</head>
+
+	<body>
+		
+		<include file="Common:common"/>
+		
+		
+		<div id="content">
+			<div id="content-header">
+				<h1>后台管理首页</h1>
+			</div>
+			<ol class="breadcrumb">
+				  <li><a href="__APP__/Home/index">首页</a></li>
+				  <li class="active">用户管理</li>
+			</ol>
+
+
+			<!-- 主内容区 -->
+
+			
+
+		<form action="__APP__/Home/Drug/saveDrug" method="post" class="definewidth m20">
+			<input type="hidden" name="id" value="{$list['id']}" />
+			    <table class="table table-bordered table-hover definewidth m10">
+			        <tr>
+			            <td width="10%" class="tableleft">药品编号</td>
+			            <td><input type="text" name="id" disabled="true" value="{$list['id']}"/></td>
+			        </tr>
+			        <tr>
+			            <td class="tableleft">药品名称</td>
+			            <td><input type="text" name="name" value="{$list['name']}"/></td>
+			        </tr>
+			        <tr>
+			            <td class="tableleft">药品规格</td>
+			            <td><input type="text" name="specifications" value="{$list['specifications']}"/></td>
+			        </tr>
+			        <tr>
+			            <td class="tableleft">计量单位</td>
+			            <td><input type="text" name="dw" value="{$list['dw']}"/></td>
+			        </tr>
+			        <tr>
+			            <td class="tableleft">药品单价</td>
+			            <td><input type="text" name="price" value="{$list['price']}"/></td>
+			        </tr>
+			        <tr>
+			            <td class="tableleft">生产日期</td>
+			            <td><input type="text" name="gen_date" value="{$list['gen_date']}"/></td>
+			        </tr>
+			        <tr>
+			            <td class="tableleft">保质期</td>
+			            <td><input type="text" name="pz_date" value="{$list['pz_date']}"/></td>
+			        </tr>
+			        <tr>
+			            <td class="tableleft">药品条码</td>
+			            <td><input type="text" name="barcode" value="{$list['barcode']}"/></td>
+			        </tr>
+			       
+			        <tr>
+			            <td class="tableleft"></td>
+			            <td>
+			                <button type="submit" class="btn btn-primary" type="button">保存</button>
+			            </td>
+			        </tr>
+			    </table>
+		</form>
+
+
+
+			
+		</div>
+		
+	</body>
+</html>

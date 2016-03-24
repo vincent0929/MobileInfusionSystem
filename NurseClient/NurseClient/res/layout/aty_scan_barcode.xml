@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@id/txtResult"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        style="@style/title_text_20_style"
+        android:background="@color/title_bg" 
+        android:text="@string/scan"
+        android:layout_weight="1"/>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:orientation="vertical" >
+
+        <SurfaceView
+            android:id="@id/preview_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <com.vincent.nurseclient.scan.ViewfinderView
+            android:id="@id/viewfinder_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/transparent" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bottom_bg" >
+
+        <Button
+            android:id="@id/CancelBtn"
+            android:layout_width="65.0dip"
+            android:layout_height="45.0dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="3.0dip"
+            android:background="@drawable/cancel_scan_selector" />
+
+
+    </FrameLayout>
+
+</LinearLayout>

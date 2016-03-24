@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- container-fluid -->
+	<head>
+		<title>网站后台管理</title>
+		<meta charset="UTF-8" />
+     		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.main.css" />
+		<link rel="stylesheet" href="__PUBLIC__/css/unicorn.grey.css" class="skin-color" />
+		<script src='http://www.ichartjs.com/ichart.latest.min.js'></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<style type="text/css">
+
+		.admin{
+				text-align: center;
+			}
+
+		.admin a:hover{
+				color: #FF0000;
+			}
+			td{
+				text-align: center;
+			}
+		</style>
+		<script type='text/javascript'>
+			$(function(){
+			      var data1 = document.getElementById('current').value;
+			      var data2 = document.getElementById('wait').value;
+
+			      var data3 = 20-data1-data2;
+
+			      var chart = iChart.create({
+			            render:"ichart-render",
+			            width:800,
+			            height:400,
+			            // background_color:"#fefefe",
+			            gradient:false,
+			            color_factor:0.2,
+			            // border:{
+			            //       color:"BCBCBC",
+			            //       width:1
+			            // },
+			            align:"center",
+			            offsetx:0,
+			            offsety:0,
+			            sub_option:{
+			                  // border:{
+			                  //       color:"#BCBCBC",
+			                  //       width:1
+			                  // },
+			                  label:{
+			                        fontweight:500,
+			                        fontsize:11,
+			                        color:"#4572a7",
+			                        sign:"square",
+			                        sign_size:12,
+			                        border:{
+			                              color:"#BCBCBC",
+			                              width:1
+			                        },
+			                        background_color:"#fefefe"
+			                  }
+			            },
+			            shadow:true,
+			            shadow_color:"#666666",
+			            shadow_blur:2,
+			            showpercent:false,
+			            column_width:"70%",
+			            bar_height:"70%",
+			            radius:"90%",
+			            title:{
+			                  text:"医院智能输液统计数据",
+			                  color:"#111111",
+			                  fontsize:20,
+			                  font:"微软雅黑",
+			                  textAlign:"center",
+			                  height:20,
+			                  offsetx:0,
+			                  offsety:0
+			            },
+			            subtitle:{
+			                  text:"",
+			                  color:"#111111",
+			                  fontsize:16,
+			                  font:"微软雅黑",
+			                  textAlign:"center",
+			                  height:20,
+			                  offsetx:0,
+			                  offsety:0
+			            },
+			            footnote:{
+			                  text:"",
+			                  color:"#111111",
+			                  fontsize:12,
+			                  font:"微软雅黑",
+			                  textAlign:"right",
+			                  height:20,
+			                  offsetx:0,
+			                  offsety:0
+			            },
+			            legend:{
+			                  enable:false,
+			                  background_color:"#fefefe",
+			                  color:"#333333",
+			                  fontsize:12,
+			                  border:{
+			                        color:"#BCBCBC",
+			                        width:1
+			                  },
+			                  column:1,
+			                  align:"right",
+			                  valign:"center",
+			                  offsetx:0,
+			                  offsety:0
+			            },
+			            coordinate:{
+			                  width:"80%",
+			                  height:"84%",
+			                  background_color:"#ffffff",
+			                  axis:{
+			                        color:"#a5acb8",
+			                        width:[1,"",1,""]
+			                  },
+			                  grid_color:"#d9d9d9",
+			                  label:{
+			                        fontweight:500,
+			                        color:"#666666",
+			                        fontsize:11
+			                  }
+			            },
+			            label:{
+			                  fontweight:500,
+			                  color:"#666666",
+			                  fontsize:11
+			            },
+			            type:"pie2d",
+			            data:[
+			                  {
+			                  name:"正在输液人数",
+			                  value:data1,
+			                  color:"#4572a7"
+			            },{
+			                  name:"等待输液人数",
+			                  value:data2,
+			                  color:"#aa4643"
+			            },{
+			                  name:"当前空闲位置",
+			                  value:data3,
+			                  color:"#89a54e"
+			            }
+			            ]
+			      });
+			      chart.draw();
+			});
+		</script>
+		
+	</head>
+
+	<body>
+		
+		<include file="Common:common"/>
+	
+		<div id="content">
+			<div id="content-header">
+				<h1>后台管理首页</h1>
+			</div>
+			<ol class="breadcrumb">
+				  <li><a href="__APP__/Index/index">首页</a></li>
+				  <li class="active">欢迎使用</li>
+			</ol>
+
+			<div>
+				<!-- 主内容区 -->
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12 center" style="text-align: center;">
+						<input type="hidden" value="{$current}" id="current"/>
+						<input type="hidden" value="{$wait}" id="wait"/>
+						
+						<div id='ichart-render'></div>
+					</div>
+				</div>
+			</div>
+
+
+			</div>
+			
+
+
+		</div>
+
+	</body>
+</html>

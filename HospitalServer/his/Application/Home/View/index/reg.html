@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>注册</title>
+
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet">
+    <style>
+        .container{
+            margin-top: 90px;
+        }
+        body{
+            background: url("__PUBLIC__/img/bg-pattern.png");
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人才招聘系统注册</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" action="__APP__/Index/doreg">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="输入您的用户名" name="username" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="输入您的密码" name="password" type="password" value="">
+                                </div>
+                                 <div class="form-group">
+                                    <input class="form-control" placeholder="输入您的真实姓名" name="realname" type="text" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="输入您的联系邮箱" name="email" type="email" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="输入您的工作地点" name="city" type="text" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="输入您的期望月薪" name="wantmoney" type="text" value="">
+                                </div>
+                                
+                               
+                                <input type="submit" class="btn btn-lg btn-success btn-block" value="注册">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</body>
+
+</html>

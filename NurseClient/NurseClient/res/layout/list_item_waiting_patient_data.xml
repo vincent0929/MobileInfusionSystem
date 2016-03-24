@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/tvPatientName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="患者"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvPatientSeatId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="座位号"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvPatientIdInQueue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="排队号"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvDrugCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="输液袋"
+        android:textSize="18sp" />
+
+</LinearLayout>
